@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Пошук анкет поруч...</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background: #ff7eb3;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .loader {
+      border: 8px solid #f3f3f3;
+      border-top: 8px solid #fff;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      margin-top: 20px;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+  <script>
+    function redirectUser() {
+      const userAgent = navigator.userAgent.toLowerCase();
+      const linkAndroid = "https://prev.affomelody.com/click?pid=39902&offer_id=25";
+      const linkIOS = "https://prev.affomelody.com/click?pid=39902&offer_id=25";
+      const fallback = "https://prev.affomelody.com/click?pid=39902&offer_id=25";
+
+      if (/android/.test(userAgent)) {
+        window.location.href = linkAndroid;
+      } else if (/iphone|ipad/.test(userAgent)) {
+        window.location.href = linkIOS;
+      } else {
+        window.location.href = fallback;
+      }
+    }
+
+    setTimeout(redirectUser, 3000);
+  </script>
+</head>
+<body>
+  <h1>🔍 Шукаємо анкети поблизу...</h1>
+  <p>Зачекайте кілька секунд. Перенаправляємо вас у приватний чат 💬</p>
+  <div class="loader"></div>
+</body>
+</html>
